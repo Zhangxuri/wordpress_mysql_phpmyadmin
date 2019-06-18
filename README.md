@@ -40,3 +40,6 @@ To run this command, wait a minute, then
 ![](images/4.png)
 ---
 ![](images/5.png)
+---
+![](images/6.png)
+
