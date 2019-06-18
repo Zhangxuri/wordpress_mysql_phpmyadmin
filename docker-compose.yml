@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: zhangxuri/1041_wordpress
+    restart: always
+    container_name: 1041_wordpress
+    depends_on:
+      - mysql
+    ports:
+      - 5566:80
+    environment:
+      WORDPRESS_DB_PASSWORD: password
+  mysql:
+    image: zhangxuri/mysql
+    restart: always
+    container_name: 1041_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: 1041_phpmyadmin
+    depends_on:
+      - mysql
+    restart: always
+    external_links:
+      - mysql:db
+    ports:
+      - 5577:80
